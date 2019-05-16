@@ -1,3 +1,5 @@
 class Animal < ActiveRecord::Base
-  belongs_to :owner, class_name: 'Person'
+  alias_attribute :owner, :person
+
+  belongs_to :person
 end

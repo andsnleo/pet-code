@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 2019_05_15_222452) do
     t.string "name"
     t.string "kind"
     t.float "monthly_cost"
-    t.integer "owner_id"
+    t.integer "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_animals_on_owner_id"
+    t.index ["person_id"], name: "index_animals_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|
