@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_05_15_222452) do
 
   create_table "people", force: :cascade do |t|
     t.string "name"
-    t.integer "identity_document"
+    t.string "identity_document"
     t.date "birthdate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
