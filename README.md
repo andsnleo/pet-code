@@ -56,23 +56,23 @@ Inclua os trechos de código que respondem as perguntas abaixo:
 
 ### Qual é o custo médio dos animais do tipo cachorro?
 
-    SUA RESPOSTA AQUI
+    Animal.where(kind: 'Cachorro').average(:monthly_cost).to_f
 
 ### Quantos cachorros existem no sistema?
 
-    SUA RESPOSTA AQUI
+    Animal.where(kind: 'Cachorro').count
 
 ### Qual o nome dos donos dos cachorros (Array de nomes)
 
-    SUA RESPOSTA AQUI
+    Person.joins(:animals).where(animals: { kind: 'Cachorro' }).pluck(:name)
 
 ### Retorne as pessoas ordenando pelo custo que elas tem com os animais (Maior para menor)
 
-    SUA RESPOSTA AQUI
+    Person.all.sort_by(&:monthly_cost_with_animals).reverse
 
 ### Levando em consideração o custo mensal, qual será o custo de 3 meses de cada pessoa?
 
-    SUA RESPOSTA AQUI
+    Person.all.map { |person| { person.name => format('%.2f', person.monthly_cost_with_animals * 3) }}
 
 # Entrega do projeto
 

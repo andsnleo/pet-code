@@ -45,5 +45,5 @@ DATASET = [
 
 DATASET.each do |data|
   person = Person.create(data[:person])
-  data[:animals].each { |animal| Animal.create(**animal, owner: person) }
+  data[:animals].each { |animal| Animal.create(**animal, person: person) }
 end

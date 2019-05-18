@@ -5,12 +5,12 @@ class Person < ActiveRecord::Base
   validates :identity_document, presence: true, length: { is: 9 }, format: { with: /[0-9]+/ }
   validates :birthdate, presence: true
 
-  def can_have_more_animals?
-    monthly_cost_with_animals <= 1_000
-  end
-
   def monthly_cost_with_animals
     animals.map(&:monthly_cost).sum
+  end
+
+  def can_have_more_animals?
+    monthly_cost_with_animals <= 1_000
   end
 
   def can_have_cats?
@@ -24,6 +24,6 @@ class Person < ActiveRecord::Base
   private
 
   def over_18?
-    birthdate < 18.years.ago
+    birthdate <= Date.today - 18.years
   end
 end
