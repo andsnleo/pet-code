@@ -17,8 +17,6 @@ ActiveRecord::Schema.define(version: 2019_05_15_222452) do
     t.string "kind"
     t.float "monthly_cost"
     t.integer "person_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_animals_on_person_id"
   end
 
@@ -26,8 +24,6 @@ ActiveRecord::Schema.define(version: 2019_05_15_222452) do
     t.string "name"
     t.string "identity_document"
     t.date "birthdate"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

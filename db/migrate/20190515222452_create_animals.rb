@@ -5,8 +5,6 @@ class CreateAnimals < ActiveRecord::Migration[5.2]
       t.string :kind
       t.float :monthly_cost
       t.references :person
-
-      t.timestamps
     end
   end
 end
