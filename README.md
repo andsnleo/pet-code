@@ -34,7 +34,7 @@ Person.all.map { |person| { person.name => format('%.2f', person.monthly_cost_wi
 ```
 
 ## Desafio
-[Ver desafio completo no Github da PetLove.](https://github.com/petlove/vagas/blob/08d18bdc6a0a9e45d313286c03e87d913fc9dadc/backend-ruby/README.md)
+[Ver desafio completo no Github da Petlove.](https://github.com/petlove/vagas/blob/08d18bdc6a0a9e45d313286c03e87d913fc9dadc/backend-ruby/README.md)
 
 ### Cenário
 
